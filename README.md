@@ -1,7 +1,14 @@
-A github mirror (and potential place to collect improvements)
-for the devmem2 utility.
+Fork of the devmem2 utility from repository https://github.com/VCTLabs/devmem2.
 
-Originally written by, and hosted at, www.lartmaker.nl/lartware/ .
+Changelog:
+- Minor changes performed to `devmem2.c`.
+    - Default mode changed to halfword
+    - Changed halfword from short to int
+    - Minor fixes
+- Added `devmem2m.c` with silent output
+- Added Makefile
+
+Originally written by, and hosted at, http://www.lartmaker.nl/lartware .
 
 From `devmem2.c` header comment:
 
