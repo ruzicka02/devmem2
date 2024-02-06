@@ -64,6 +64,12 @@ int main(int argc, char **argv) {
 	}
 	target = strtoul(argv[1], 0, 0);
 
+	// specific for our usage of the Kria
+	if (target < 0xa0000000 || target > 0xffffffff) {
+		fprintf(stderr, "Address out of expected range; terminating.\n");
+		exit(2);
+	}
+
 	if(argc > 2)
 		access_type = tolower(argv[2][0]);
 

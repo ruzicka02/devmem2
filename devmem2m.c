@@ -62,6 +62,12 @@ int main(int argc, char **argv) {
 	}
 	target = strtoul(argv[1], 0, 0);
 
+	// specific for our usage of the Kria
+	if (target < 0xa0000000 || target > 0xffffffff) {
+		fprintf(stderr, "Address out of expected range; terminating.\n");
+		exit(2);
+	}
+
 	if((fd = open("/dev/mem", O_RDWR | O_SYNC)) == -1) FATAL;
 	// printf("/dev/mem opened.\n");
 	// fflush(stdout);
