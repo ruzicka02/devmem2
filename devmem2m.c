@@ -77,7 +77,7 @@ int main(int argc, char **argv) {
 	read_result = *((unsigned int *) virt_addr);
 
 	// printf("Value at address 0x%lX (%p): 0x%lX\n", target, virt_addr, read_result);
-	printf("%lX\n", read_result);
+	printf("%08lX\n", read_result);
 	fflush(stdout);
 
 	if(argc > 2) {
@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
 		read_result = *((unsigned int *) virt_addr);
 
 		// printf("Written 0x%lX; readback 0x%lX\n", writeval, read_result);
-		printf("%lX\n", read_result);  // consider switching for `writeval`
+		printf("%08lX\n", read_result);  // consider switching for `writeval`
 		fflush(stdout);
 	}
 
