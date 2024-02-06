@@ -80,12 +80,17 @@ int main(int argc, char **argv) {
 	// fflush(stdout);
 
 	virt_addr = (void *)((char *)map_base + (target & MAP_MASK));
-	read_result = *((unsigned int *) virt_addr);
 
-	// printf("Value at address 0x%lX (%p): 0x%lX\n", target, virt_addr, read_result);
-	printf("%08lX\n", read_result);
-	fflush(stdout);
+	// === READ ===
+	if (argc == 2) {
+		read_result = *((unsigned int *) virt_addr);
 
+		// printf("Value at address 0x%lX (%p): 0x%lX\n", target, virt_addr, read_result);
+		printf("%08lX\n", read_result);
+		fflush(stdout);
+	}
+
+	// === WRITE ===
 	if(argc > 2) {
 		writeval = strtoul(argv[2], 0, 0);
 		*((unsigned int *) virt_addr) = writeval;
